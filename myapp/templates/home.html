@@ -1,0 +1,39 @@
+{% extends "_base.html" %} {% block content %}
+
+<h1 class="mb-6 text-3xl text-green-800">Boards</h1>
+
+<div class="relative overflow-x-auto">
+  <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <tr>
+        <th scope="col" class="px-6 py-3">Board</th>
+        <th scope="col" class="px-6 py-3">Posts</th>
+        <th scope="col" class="px-6 py-3">Topics</th>
+        <th scope="col" class="px-6 py-3">Last Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for board in boards %}
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <th
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        >
+          {{ board.name }}<br />
+          <small class="text-gray-500">{{ board.description }}</small>
+        </th>
+        <td class="px-6 py-4">0</td>
+        <td class="px-6 py-4">0</td>
+        <td class="px-6 py-4"></td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content%}
